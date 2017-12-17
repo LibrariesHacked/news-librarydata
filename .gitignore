@@ -1,0 +1,9 @@
+App_Data/PublishProfiles/somcatchments - Web Deploy.pubxml
+*.publishproj
+.vs/VSWorkspaceState.json
+.vs/Somerset-Catchments/v15/.suo
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+
+
+node_modules
