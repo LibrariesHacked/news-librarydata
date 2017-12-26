@@ -7,17 +7,29 @@
     <link href="node_modules/bootswatch/dist/sandstone/bootstrap.min.css" rel="stylesheet" />
     <link href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container main">
-        <h1>News</h1>
-        <div><table id="tbl-news" class="table display responsive"></table></div>
+        <h1>Libraries news</h1>
+        <hr />
+        <div class="row">
+            <div class="col-lg-4">
+                <canvas id="cht_types_per_year" height="200"></canvas>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive"><table id="tbl-news" class="table display responsive"></table></div>
+            </div>
+        </div>
     </div>
     <footer>
         <div class="container">
             <hr />
-            <p>a <a target="_blank" href="https://www.librarieshacked.org">Libraries Hacked</a> open source  project, available on <a target="_blank" href="https://www.github.com/librarieshacked/catalogues-librarydata">GitHub</a></p>
+            <p>a <a target="_blank" href="https://www.librarieshacked.org">Libraries Hacked</a> open source  project, available on <a target="_blank" href="https://www.github.com/librarieshacked/catalogues-librarydata">GitHub</a>. Public Libraries News content is published under Creative Commons</p>
         </div>
     </footer>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -27,6 +39,8 @@
     <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
     <script src="node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="js/news.js"></script>
     <script src="js/site.js"></script>
 </body>
