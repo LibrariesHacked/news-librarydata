@@ -4,20 +4,24 @@ var News = {
     type_year_counts: [],
     location_counts: [],
     load: function (callback) {
-        $.get('/data/PLNStories.json', function (data) {
+        $.when($.get('/data/PLNStories.json'), $.get('/data/Locations.json'))
+          .done(function (story_data, location_data) {
             var stories = [];
             var yr = {}, mth = {}, locations = {};
-            $.each(Object.keys(data), function (i, type) {
+            $.each(Object.keys(story_data), function (i, type) {
                 yr[type] = {};
                 mth[type] = {};
-                $.each(Object.keys(data[type]), function (y, year) {
+                $.each(Object.keys(story_data[type]), function (y, year) {
                     yr[type][mth] = 0;
-                    $.each(Object.keys(data[type][year]), function (z, month) {
+                    $.each(Object.keys(story_data[type][year]), function (z, month) {
                         mth[type][year + month] = 0;
-                        $.each(data[type][year][month], function (idx, story) {
+                        $.each(story_data[type][year][month], function (idx, story) {
                             // Change the date format
                             if (!locations[story[1]]) locations[story[1]] = 0;
                             locations[story[1]] = locations[story[1]] + 1;
+                            $.each(location_data, function(){
+                              
+                            });
                             story[1] = moment(story[1], 'ddd, DD MMM YYYY HH:mm:ss +0000').format('YYYYMMDD');
                             yr[type][year]++;
                             yr[type][year + month]++; 
