@@ -1,4 +1,8 @@
 var News = {
+    years: [],
+    types: [],
+    selected_years: [2017, 2018],
+    selected_types: ['changes', 'local']
     stories: [],
     type_month_counts: [],
     type_year_counts: [],
@@ -9,9 +13,11 @@ var News = {
             var stories = [];
             var yr = {}, mth = {}, locations = {};
             $.each(Object.keys(story_data), function (i, type) {
+                this.types.push(type);
                 yr[type] = {};
                 mth[type] = {};
                 $.each(Object.keys(story_data[type]), function (y, year) {
+                    this.years.push(year);
                     yr[type][mth] = 0;
                     $.each(Object.keys(story_data[type][year]), function (z, month) {
                         mth[type][year + month] = 0;
@@ -42,5 +48,6 @@ var News = {
             this.stories = stories;
             callback(stories);
         }.bind(this));
-    }
+    },
+    process: function(){}
 };

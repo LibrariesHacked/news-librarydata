@@ -1,9 +1,11 @@
 ﻿$(function () {
 
-    News.load(function (data) {
-        $('#tbl-news').DataTable({
+    // Set up Data Table
+    $('#tbl-news').DataTable({
             responsive: true,
-            data: data,
+            data: [],
+            dom: 'Bfrtip',
+            buttons: ['copy', 'excel', 'pdf'],
             columns: [
                 { title: 'Where' },
                 {
@@ -30,9 +32,10 @@
                 { title: 'Type' }
             ],
             order: [1, 'desc']
-        });
-
-        var ctx = document.getElementById('cht_types_per_year').getContext('2d');
+    });
+    
+    // Set up line chart
+    var ctx = document.getElementById('cht_types_per_year').getContext('2d');
         var line = new Chart(ctx, {
             type: 'bar',
             data: Object.keys(News.type_year_counts).map(function (i, type) {
@@ -68,5 +71,24 @@
                 }
             }
         });
+        
+        
+    var setDataTable = function() {
+    
+    
+    
+    };
+    
+    
+    var setLine = function() {};
+    
+    
+    
+    
+    News.load(function (data) {
+    
+        // On initial load load in the data with the custom filters
+
+        
     });
 });
