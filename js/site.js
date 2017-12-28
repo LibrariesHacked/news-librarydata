@@ -6,7 +6,7 @@ $(function() {
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoibGlicmFyaWVzaGFja2VkIiwiYSI6IlctaDdxSm8ifQ.bxf1OpyYLiriHsZN33TD2A'
-  }).addTo(mymap);
+  }).addTo(map);
   // Set up Data Table
   $('#tbl-news').DataTable({
     responsive: true,

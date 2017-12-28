@@ -36,7 +36,7 @@ var News = {
               mth[type][year + month] = 0;
               $.each(this.story_data[type][year][month], function(idx, story) {
                 // Change the date format
-                if (!locations[story[1]]) locations[story[1]] = [0,0,0];
+                if (!locations[story[1]]) locations[story[1]] = [0, 0, 0];
                 locations[story[1]][0] = locations[story[1]][0] + 1;
                 $.each(Object.keys(this.location_data), function(y, loc) {
                   if (loc === story[1]) {
