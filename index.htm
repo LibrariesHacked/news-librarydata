@@ -8,7 +8,6 @@
     <link href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" />
     <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="node_modules/leaflet/dist/leaflet.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
@@ -20,10 +19,12 @@
                 <canvas id="cht_types_per_month" height="200"></canvas>
             </div>
             <div class="col-lg-4">
-                <div id="map"></div>
+                <canvas id="cht_top_locations" height="200"></canvas>
             </div>
             <div class="col-lg-4">
-                <div class="btn-group" data-toggle="buttons"></div>
+                <h4>Filter data</h4>
+                <div id="btns-years" class="btn-group" data-toggle="buttons"></div>
+                <div id="btns-types" class="btn-group" data-toggle="buttons"></div>
             </div>
         </div>
         <div class="row">
@@ -38,8 +39,8 @@
         <div class="container">
             <hr />
             <p>
-                a <a target="_blank" href="https://www.librarieshacked.org">Libraries Hacked</a> open source project, available on <a target="_blank" href="https://www.github.com/librarieshacked/catalogues-librarydata">GitHub</a>. Public Libraries News content
-                is published under Creative Commons Attribution 3.0 Unported Licence.
+                a <a target="_blank" href="https://www.librarieshacked.org">Libraries Hacked</a> open source project, available on <a target="_blank" href="https://www.github.com/librarieshacked/catalogues-librarydata">GitHub</a>. <a title="Public Libraries News" href="http://www.publiclibrariesnews.com" target="_blank">Public Libraries News</a> content
+                is published under <a title="Creative Commons Attribution 3.0 Unported Licence." target="_blank" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported Licence.</a>
             </p>
         </div>
     </footer>
@@ -50,7 +51,6 @@
     <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
     <script src="node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <script src="node_modules/leaflet/dist/leaflet.js"></script>
     <script src="node_modules/moment/min/moment.min.js"></script>
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="js/news.js"></script>
