@@ -1,3 +1,7 @@
 ﻿.main {
     padding-top: 30px;
 }
+
+#map {
+    height: 200px;
+}
