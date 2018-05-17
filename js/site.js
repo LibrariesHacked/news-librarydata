@@ -26,12 +26,13 @@ $(function () {
         {
             title: 'Actions',
             render: function (data, type, row) {
+				var base_link = 'http://www.publiclibrariesnews.com/' + data;
                 if (type === 'sort') {
                     return data;
                 } else {
-                    var twitter_link = 'https://twitter.com/intent/tweet?url=' + encodeURI('http://www.publiclibrariesnews.com/' + data + '&text=' + row[0] + ' featured on Public Libraries News (@publiclibnews). "' + (row[2].length > 70 ? (row[2].substring(0, 70) + '...') : row[2]) + '" via @librarieshacked"');
+                    var twitter_link = 'https://twitter.com/intent/tweet?url=' + encodeURI(base_link + '&text=' + row[0] + ' featured on Public Libraries News (@publiclibnews). "' + (row[2].length > 70 ? (row[2].substring(0, 70) + '...') : row[2]) + '" via @librarieshacked"');
                     return (
-                        '<span class="lead"><a title="Go to Public Libraries News" target="_blank" href="http://www.publiclibrariesnews.com/' + data + '"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>&nbsp;&nbsp;' +
+                        '<span class="lead"><a title="Go to Public Libraries News" target="_blank" href="' + base_link + '"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>&nbsp;&nbsp;' +
                         '<a title="Share on Twitter" target="_blank" href="' + twitter_link + '"><i class="fa fa-twitter-square text-info" aria-hidden="true"></i></a></span>'
                     );
                 }
@@ -124,7 +125,7 @@ $(function () {
         $.each(News.years, function (i, year) {
             var checked = false;
             if (News.selected_years.indexOf(year) !== -1) checked = true;
-            $('#btns-years').append('<label class="btn btn-primary ' + (checked ? 'active' : '') + '"><input id="chb_year_' + year + '" type="checkbox" class="chb-years" ' + (checked ? 'checked=""' : '') + '>' + year + '</label>');
+            $('#btns-years').append('<label class="btn btn-primary ' + (checked ? 'active' : '') + '"><input id="chb_year_' + year + '" type="checkbox" class="chb-years" ' + (checked ? 'checked=""' : '') + ' autocomplete="off">' + year + '</label>');
         });
         // And handle updates
         $('.chb-years').change(function (e) {
@@ -143,7 +144,7 @@ $(function () {
         $.each(News.types, function (i, type) {
             var checked = false;
             if (News.selected_types.indexOf(type) !== -1) checked = true;
-            $('#btns-types').append('<label class="btn btn-primary ' + (checked ? 'active' : '') + '"><input id="chb_type_' + type + '" type="checkbox" class="chb-types" ' + (checked ? 'checked=""' : '') + '>' + type + '</label>');
+            $('#btns-types').append('<label class="btn btn-primary ' + (checked ? 'active' : '') + '"><input id="chb_type_' + type + '" type="checkbox" class="chb-types" ' + (checked ? 'checked=""' : '') + ' autocomplete="off">' + type + '</label>');
         });
         // And handle updates
         $('.chb-types').change(function (e) {
@@ -225,5 +226,6 @@ $(function () {
         setTypesBtns();
         setLocationList();
         updateGraphsAndTable();
+        $('#i-loading').hide();
     });
 });
