@@ -3,7 +3,7 @@ var News = {
     location_data: {},
     years: [],
     types: [],
-    selected_years: ['2017', '2018'],
+    selected_years: ['2018'],
     selected_types: ['News', 'Change'],
     selected_locations: [],
     stories: [],
@@ -49,7 +49,7 @@ var News = {
                                 if (this.selected_locations.indexOf(story[0]) !== -1 || this.selected_locations.length === 0) {
                                     var new_story = [
                                         story[0],
-                                        moment(story[1], 'ddd, DD MMM YYYY HH:mm:ss +0000').format('YYYYMMDD'),
+                                        moment(story[1], 'ddd, DD MMM YYYY HH:mm:ss +0000').format('YYYY/MM/DD'),
                                         story[2],
                                         story[3],
                                         type_description

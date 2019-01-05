@@ -7,3 +7,4 @@ App_Data/PublishProfiles/somcatchments - Web Deploy.pubxml
 
 
 node_modules
+.vscode/launch.json

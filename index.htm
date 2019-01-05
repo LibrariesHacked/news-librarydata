@@ -1,15 +1,16 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
-    <title>news | library data</title>
+    <title>News</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="node_modules/bootswatch/dist/sandstone/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/bootswatch/dist/pulse/bootstrap.min.css" rel="stylesheet" />
     <link href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" />
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 </head>
+
 <body>
     <div class="container main">
         <h1>Libraries news &nbsp;</h1>
@@ -24,9 +25,10 @@
             </div>
             <div class="col-lg-4">
                 <h4>Filter data</h4>
-                <p>Filter by year of news item, or type of item</p>
                 <div id="btns-years" class="btn-group btn-group-toggle" data-toggle="buttons"></div>
+                <hr/>
                 <div id="btns-types" class="btn-group btn-group-toggle" data-toggle="buttons"></div>
+                <hr/>
                 <div class="form-group">
                     <label for="sel-location">Location</label>
                     <select class="form-control" id="sel-location">
@@ -35,19 +37,18 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="table-responsive">
-                    <table id="tbl-news" class="table display responsive"></table>
-                </div>
-            </div>
-        </div>
+        <table id="tbl-news" class="table display responsive"></table>
     </div>
     <footer>
         <div class="container">
             <hr />
             <p>
-                a <a target="_blank" href="https://www.librarieshacked.org">Libraries Hacked</a> open source project, available on <a target="_blank" href="https://www.github.com/librarieshacked/catalogues-librarydata">GitHub</a>. <a title="Public Libraries News" href="http://www.publiclibrariesnews.com" target="_blank">Public Libraries News</a> content is published under <a title="Creative Commons Attribution 3.0 Unported Licence." target="_blank" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported Licence.</a>
+                a <a target="_blank" href="https://www.librarieshacked.org">Libraries Hacked</a> open source project,
+                available on <a target="_blank" href="https://www.github.com/librarieshacked/catalogues-librarydata">GitHub</a>.
+                <a title="Public Libraries News" href="http://www.publiclibrariesnews.com" target="_blank">Public
+                    Libraries News</a> content is published under <a title="Creative Commons Attribution 3.0 Unported Licence."
+                    target="_blank" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0
+                    Unported Licence.</a>
             </p>
         </div>
     </footer>
@@ -63,4 +64,5 @@
     <script src="js/news.js"></script>
     <script src="js/site.js"></script>
 </body>
+
 </html>

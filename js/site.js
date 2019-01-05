@@ -10,33 +10,11 @@ $(function () {
             title: 'Where'
         },
         {
-            title: 'Date',
-            render: function (data, type, row) {
-                if (type === 'sort') {
-                    return data;
-                } else {
-                    return moment(data).format('ddd Do MMM YYYY');
-                }
-            }
+            title: 'Date'
         },
         {
             title: 'News',
             className: 'none'
-        },
-        {
-            title: 'Actions',
-            render: function (data, type, row) {
-				var base_link = 'http://www.publiclibrariesnews.com/' + data;
-                if (type === 'sort') {
-                    return data;
-                } else {
-                    var twitter_link = 'https://twitter.com/intent/tweet?url=' + encodeURI(base_link + '&text=' + row[0] + ' featured on Public Libraries News (@publiclibnews). "' + (row[2].length > 70 ? (row[2].substring(0, 70) + '...') : row[2]) + '" via @librarieshacked"');
-                    return (
-                        '<span class="lead"><a title="Go to Public Libraries News" target="_blank" href="' + base_link + '"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>&nbsp;&nbsp;' +
-                        '<a title="Share on Twitter" target="_blank" href="' + twitter_link + '"><i class="fa fa-twitter-square text-info" aria-hidden="true"></i></a></span>'
-                    );
-                }
-            }
         },
         {
             title: 'Type'
@@ -185,7 +163,7 @@ $(function () {
         bar_locations.data.labels = [];
         bar_locations.data.datasets[0].data = [];
         $.each(top_five, function (i, location) {
-            bar_locations.data.labels.push(location[0].length > 15 ? location[0].substring(0, 15) : location[0]);
+            bar_locations.data.labels.push(location[0].length > 16 ? location[0].substring(0, 16) : location[0]);
             bar_locations.data.datasets[0].data.push(location[1][0]);
         });
         bar_locations.update();
