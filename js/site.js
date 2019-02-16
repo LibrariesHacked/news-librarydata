@@ -5,7 +5,20 @@ $(function () {
         responsive: true,
         data: [],
         dom: 'Bfrtip',
-        buttons: ['copy', 'excel', 'pdf'],
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                className: 'btn-info'
+            },
+            {
+                extend: 'csvHtml5',
+                className: 'btn-info'
+            },
+            {
+                extend: 'excelHtml5',
+                className: 'btn-info'
+            }
+        ],
         columns: [{
             title: 'Where'
         },
@@ -163,7 +176,7 @@ $(function () {
         bar_locations.data.labels = [];
         bar_locations.data.datasets[0].data = [];
         $.each(top_five, function (i, location) {
-            bar_locations.data.labels.push(location[0].length > 16 ? location[0].substring(0, 16) : location[0]);
+            bar_locations.data.labels.push(location[0].length > 12 ? location[0].substring(0, 12) : location[0]);
             bar_locations.data.datasets[0].data.push(location[1][0]);
         });
         bar_locations.update();
@@ -196,7 +209,6 @@ $(function () {
         setLine();
         setLocationsChart();
     };
-
 
     // 
     News.load(function (data) {

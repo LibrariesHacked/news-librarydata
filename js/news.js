@@ -3,7 +3,7 @@ var News = {
     location_data: {},
     years: [],
     types: [],
-    selected_years: ['2018'],
+    selected_years: ['2019'],
     selected_types: ['News', 'Change'],
     selected_locations: [],
     stories: [],
@@ -51,7 +51,6 @@ var News = {
                                         story[0],
                                         moment(story[1], 'ddd, DD MMM YYYY HH:mm:ss +0000').format('YYYY/MM/DD'),
                                         story[2],
-                                        story[3],
                                         type_description
                                     ];
                                     // Change the date format
